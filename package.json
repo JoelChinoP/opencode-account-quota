@@ -1,12 +1,35 @@
 {
-  "name": "account-quota",
+  "name": "opencode-account-quota",
   "version": "0.1.0",
-  "private": true,
-  "description": "Account quota and route order for OpenCode.",
+  "description": "OpenCode plugin to check the remaining quota of each connected account (ChatGPT, Claude Code, DeepSeek) and set a route order.",
+  "keywords": ["opencode", "opencode-plugin", "quota", "usage", "codex", "claude-code", "deepseek"],
+  "license": "MIT",
+  "author": "JoelChinoP",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoelChinoP/opencode-account-quota.git"
+  },
+  "homepage": "https://github.com/JoelChinoP/opencode-account-quota#readme",
+  "bugs": "https://github.com/JoelChinoP/opencode-account-quota/issues",
   "type": "module",
   "exports": {
     ".": "./index.js",
     "./tui": "./tui.tsx",
     "./rpc": "./rpc.js"
-  }
+  },
+  "files": [
+    "index.js",
+    "tui.tsx",
+    "rpc.js",
+    "inventory.js",
+    "server.js",
+    "sync.js",
+    "view.js",
+    "rules.js",
+    "preferences.js",
+    "routing.js",
+    "deepseek.js",
+    "codex.js",
+    "claude.js"
+  ]
 }

@@ -1,5 +1,7 @@
 # opencode-account-quota
 
+[![npm](https://img.shields.io/npm/v/opencode-account-quota)](https://www.npmjs.com/package/opencode-account-quota) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 OpenCode plugin to check how much quota each connected account has left, get a notice when one runs low, and keep a route order of accounts. Open it with `/quota`.
 
 ![Claude Code usage in the /quota modal](docs/claude.png)
@@ -40,17 +42,17 @@ Screenshots use sample accounts and values.
 ## Install
 
 ```sh
-git clone https://github.com/JoelChinoP/opencode-account-quota.git
+opencode plugin add opencode-account-quota
 ```
 
-Add it to `opencode.json` / `opencode.jsonc`:
+Or add it to `opencode.json` / `opencode.jsonc` yourself, with options:
 
 ```jsonc
 {
   "$schema": "https://opencode.ai/config.json",
   "plugins": [
     {
-      "package": "/path/to/opencode-account-quota",
+      "package": "opencode-account-quota@^0.1.0",
       "options": {
         "experimentalCodexUsage": false,
         "experimentalClaudeUsage": false,
@@ -62,7 +64,9 @@ Add it to `opencode.json` / `opencode.jsonc`:
 }
 ```
 
-Restart OpenCode and run `/quota` (or `Account quota and routing` from `Ctrl+P`).
+OpenCode installs the package and reloads plugins on save; then run `/quota` (or `Account quota and routing` from `Ctrl+P`). A range such as `@^0.1.0` updates itself within it; a bare name stays on the installed version until `opencode plugin update`.
+
+Without npm, from GitHub: `github:JoelChinoP/opencode-account-quota` (or `#v0.1.0` to pin a tag).
 
 Claude Code usage runs the `claude` binary from `PATH`, or `OPENCODE_CLAUDE_PATH` if set.
 
