@@ -2,6 +2,8 @@
 
 OpenCode plugin to check how much quota each connected account has left, get a notice when one runs low, and keep a route order of accounts. Open it with `/quota`.
 
+![Claude Code usage in the /quota modal](docs/claude.png)
+
 > Status: 0.1.0. Tested with OpenCode 2.3.2, 2.4.1 and 2.4.2. ChatGPT and Claude Code readings are experimental and use unofficial endpoints that may change.
 
 ## What it shows
@@ -15,6 +17,25 @@ OpenCode plugin to check how much quota each connected account has left, get a n
 `—` means no data, never zero usage. `●` marks the account in use.
 
 The plugin does not switch accounts and does not touch credentials: logging in and changing accounts stay in OpenCode (`/connect`). Only your preferences (route order, notice thresholds) are saved; readings stay in memory. Opening the modal does not query any provider: press `r` to refresh the selected account or `a` for all of them.
+
+## Screenshots
+
+| ChatGPT (experimental, stale data) | DeepSeek balance |
+|---|---|
+| ![ChatGPT usage marked Experimental and Stale](docs/chatgpt.png) | ![DeepSeek balance with low-balance notice](docs/deepseek.png) |
+
+**Route order** — accounts by preference, with a preview of the next turn:
+
+![Route order with next-turn preview](docs/route-order.png)
+
+Screenshots use sample accounts and values.
+
+## Keys
+
+| Screen | Keys |
+|---|---|
+| Accounts | `r` Refresh · `a` Refresh all · `o` Route order · `m` Balance notice · `esc` Close |
+| Route order | `a` Add account · `Enter` Edit (model, effort, account, move, remove) · `o` Options · `s` Save · `esc` Discard |
 
 ## Install
 
